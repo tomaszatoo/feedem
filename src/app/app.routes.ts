@@ -8,4 +8,5 @@ export const routes: Routes = [
     { path: '', component: MainMenuComponent },
     { path: 'settings', component: SettingsComponent },
     { path: 'game', component: GameComponent },
+    { path: '**', redirectTo: '' }
 ];
