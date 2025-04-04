@@ -2,27 +2,126 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Socket.IO Single-File Test</title>
+    <title>Socket.IO Controller/Subscriber Test</title>
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .role-info {
+        margin: 20px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .controller-section {
+        background-color: #f0f0f0;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 20px 0;
+      }
+      .subscriber-section {
+        background-color: #e0e0e0;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 20px 0;
+      }
+      button {
+        padding: 8px 16px;
+        margin: 5px;
+        cursor: pointer;
+      }
+      #log {
+        height: 200px;
+        overflow-y: auto;
+      }
+    </style>
   </head>
   <body>
-    <h1>Socket.IO Test</h1>
-    <script src="https://cdn.jsdelivr.net/npm/socket.io-client/dist/socket.io.min.js"></script>
+    <div class="container">
+      <h1>Socket.IO Controller/Subscriber Test</h1>
+      
+      <div class="role-info">
+        <h2>Current Role: <span id="currentRole">Subscriber</span></h2>
+        <button id="requestControllerBtn">Request Controller Role</button>
+      </div>
 
+      <div class="controller-section">
+        <h3>Controller Section</h3>
+        <input type="text" id="message" placeholder="Enter message to broadcast" />
+        <button onclick="sendMessage()">Broadcast Message</button>
+      </div>
+
+      <div class="subscriber-section">
+        <h3>Subscriber Section</h3>
+        <div id="log"></div>
+      </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client/dist/socket.io.min.js"></script>
     <script>
       const socket = io('http://localhost:8888', {
         transports: ['websocket', 'polling']
       });
 
+      const log = document.getElementById('log');
+      const currentRoleSpan = document.getElementById('currentRole');
+      const requestControllerBtn = document.getElementById('requestControllerBtn');
+      const controllerSection = document.querySelector('.controller-section');
+      const subscriberSection = document.querySelector('.subscriber-section');
+
+      // Hide controller section by default
+      controllerSection.style.display = 'none';
+
+      function addLog(message) {
+        const entry = document.createElement('div');
+        entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+        log.appendChild(entry);
+        log.scrollTop = log.scrollHeight;
+      }
+
       socket.on('connect', () => {
-        console.log(`Connected as ${socket.id}`);
+        addLog(`Connected as ${socket.id}`);
+      });
+
+      socket.on('role_assigned', (data) => {
+        currentRoleSpan.textContent = data.role;
+        if (data.role === 'controller') {
+          controllerSection.style.display = 'block';
+          requestControllerBtn.disabled = true;
+          addLog('You are now the controller');
+        } else {
+          controllerSection.style.display = 'none';
+          requestControllerBtn.disabled = false;
+          addLog('You are now a subscriber');
+        }
+      });
+
+      socket.on('controller_assigned', (data) => {
+        addLog(`Controller assigned: ${data.controller_id}`);
       });
 
       socket.on('data_update', (data) => {
-        console.log('Received data update:', data);
+        addLog(`Received update: ${JSON.stringify(data)}`);
+      });
+
+      socket.on('error', (data) => {
+        addLog(`Error: ${data.message}`);
+      });
+
+      requestControllerBtn.addEventListener('click', () => {
+        socket.emit('request_controller_role');
       });
 
       function sendMessage() {
-        socket.emit('update_data', { message: 'Hello from client!' });
+        const message = document.getElementById('message').value;
+        if (message.trim()) {
+          socket.emit('update_data', { message: message });
+          document.getElementById('message').value = '';
+        }
       }
     </script>
   </body>
