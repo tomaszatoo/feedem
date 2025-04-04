@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Socket.IO Single-File Test</title>
+  </head>
+  <body>
+    <h1>Socket.IO Test</h1>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client/dist/socket.io.min.js"></script>
+
+    <script>
+      const socket = io('http://localhost:8888', {
+        transports: ['websocket', 'polling']
+      });
+
+      socket.on('connect', () => {
+        console.log(`Connected as ${socket.id}`);
+      });
+
+      socket.on('data_update', (data) => {
+        console.log('Received data update:', data);
+      });
+
+      function sendMessage() {
+        socket.emit('update_data', { message: 'Hello from client!' });
+      }
+    </script>
+  </body>
+</html>
