@@ -2,13 +2,15 @@ import os
 import tornado.ioloop
 import tornado.web
 import socketio
-from typing import List, Optional
+from typing import List
 
 PORT = int(os.environ.get('TORNADO_PORT', 8888))
+DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
 
-subscribers: List[str] = []  # List of subscriber socket IDs
-controllers: List[str] = []  # List of controller socket IDs
-current_controller: Optional[str] = None  # Currently active controller
+subscribers: List[str] = []
+"""List of SIDs of all connected clients which are just watching."""
+controllers: List[str] = []
+"""List of SIDs of all connected clients which want to send the data. Only the the first one can!"""
 
 class IndexHandler(tornado.web.RequestHandler):
     """Basic health check endpoint."""
@@ -17,19 +19,22 @@ class IndexHandler(tornado.web.RequestHandler):
         self.write("OK")
 
 class DevHandler(tornado.web.RequestHandler):
-    """Handler for dev.html"""
+    """Handler for dev.html which contains a simple UI for development purposes.
+    Should be removed before deploying.
+    """
     def get(self):
         with open(os.path.join(os.path.dirname(__file__), 'dev.html'), 'r') as f:
             self.write(f.read())
 
-
+# SocketIO server instance
 sio = socketio.AsyncServer(
     async_mode='tornado',
     cors_allowed_origins="*",
-    logger=False,
-    engineio_logger=False
+    logger=DEBUG,
+    engineio_logger=DEBUG
 )
 
+# Tornado server application instance
 app = tornado.web.Application([
     (r'/', IndexHandler),
     (r'/socket.io/', socketio.get_tornado_handler(sio)),
@@ -46,55 +51,78 @@ async def connect(sid, environ):
 
 @sio.event
 async def disconnect(sid):
-    print(f"❌ client disconnected: {sid}")
-    global subscribers, controllers, current_controller
+    global subscribers, controllers
     if sid in subscribers:
+        print(f"❌ subscriber removed: {sid}")
         subscribers.remove(sid)
-    if sid in controllers:
-        controllers.remove(sid)
-
-    if sid != current_controller:
+        
+    if sid not in controllers:
         return
     
-    current_controller = None
-    if controllers:
-        current_controller = controllers[0]
-        await sio.emit('controller_assigned', {'controller_id': current_controller})
+    if sid in controllers[1:]:
+        print(f"❌ waiting controller removed: {sid}")
+        controllers.remove(sid)
+        
+    if sid == controllers[0]:
+        print(f"👑 main controller removed: {sid}")
+        controllers.remove(sid)
+        if len(controllers) > 0: # Immediately assign NEW MAIN CONTROLLER
+            await sio.emit('role_assigned', {'role': 'controller'}, room=controllers[0])
+
+    # Emit warning to those who are waiting for the controller role
+    for i, controller in enumerate(controllers):
+        if i == 0:
+            continue
+        await sio.emit('warning', {'message': f'Waiting for controller role, {i} in front of you'}, room=controller)
+
 
 @sio.event
 async def request_controller_role(sid):
     """Event handler for clients requesting controller role. Only one controller is allowed.
     TODO: Implement a queue of waiting subscribers for the controller role.
     """
-    global current_controller, controllers, subscribers
-    if current_controller is not None:
-        print(f"🚫 controller role already assigned: {current_controller}")
-        await sio.emit('error', {'message': 'Controller role already assigned'}, room=sid)
+    global controllers, subscribers
+    # NOT EXPECTED
+    if sid in controllers:
+        print(f"🚫 already in controller queue with id {sid}")
+        await sio.emit('error', {'message': 'Already in controller queue'}, room=sid)
         return
 
-    print(f"👑 controller role assigned to: {sid}")
-    if sid in subscribers:
-        subscribers.remove(sid)
+    # NEW KING OF THE HILL
+    if len(controllers) == 0:
+        print(f"👑 controller role assigned to: {sid}")
+        if sid in subscribers:
+            subscribers.remove(sid)
+        controllers.append(sid)
+        await sio.emit('role_assigned', {'role': 'controller'}, room=sid)
+        await sio.emit('controller_assigned', {'controller_id': sid})
+        return
 
+    # ADD TO QUEUE - is not present, is not the first so we add to the end
+    print(f"⏳ adding {sid} to controllers queue")
     controllers.append(sid)
-    current_controller = sid
-    await sio.emit('role_assigned', {'role': 'controller'}, room=sid)
-    await sio.emit('controller_assigned', {'controller_id': sid})
-        
+    position = len(controllers) - 1
+    await sio.emit('warning', {'message': f'Waiting for controller role, {position} in front of you'}, room=sid)
+
 
 @sio.event
 async def update_data(sid, data):
     """Event handler for data updates - only controllers can send data"""
-    global current_controller
-    if sid != current_controller:
+    global controllers
+
+    # NOT EXPECTED
+    if sid != controllers[0]:
         print(f"🚫 data update rejected from non-controller {sid}")
-        await sio.emit('error', {'message': 'Only controller can send data'}, room=sid)
+        await sio.emit('error', {'message': 'Only first controller can send data!'}, room=sid)
         return
 
+    # DISTRIBUTE DATA
     print(f"🔄 received data from controller {sid}: {data}")
-    await sio.emit('data_update', data, room=subscribers)
+    lookers = subscribers + controllers[1:]
+    await sio.emit('data_update', data, room=lookers)
+
 
 if __name__ == "__main__":
     app.listen(PORT)
-    print(f"Tornado server started on http://127.0.0.1:{PORT}/")
+    print(f"🚀 Tornado server started on http://127.0.0.1:{PORT}/")
     tornado.ioloop.IOLoop.current().start()
