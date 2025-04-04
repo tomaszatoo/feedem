@@ -40,7 +40,6 @@
   </head>
   <body>
     <div class="container">
-      <h1>Socket.IO Controller/Subscriber Test</h1>
       
       <div class="role-info">
         <h2>Current Role: <span id="currentRole">Subscriber</span></h2>
@@ -49,7 +48,7 @@
 
       <div class="controller-section">
         <h3>Controller Section</h3>
-        <input type="text" id="message" placeholder="Enter message to broadcast" />
+        <input type="text" id="message" placeholder="Game state to send" />
         <button onclick="sendMessage()">Broadcast Message</button>
       </div>
 
@@ -110,6 +109,10 @@
 
       socket.on('error', (data) => {
         addLog(`Error: ${data.message}`);
+      });
+
+      socket.on('warning', (data) => {
+        addLog(`Warning: ${data.message}`);
       });
 
       requestControllerBtn.addEventListener('click', () => {
