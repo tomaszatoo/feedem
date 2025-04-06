@@ -20,8 +20,15 @@ python main.py
 
 ## Production
 
-TODO:
-- 1. Add a Dockerfile
-- 2. Automate docker image build and push to container registry
-- 3. Deploy to Andreas' VPS
+### Build and Publish Docker Image
 
+```bash
+docker build --platform linux/amd64 -t ghcr.io/agajdosi/feedem_synchronizator:latest .
+docker push ghcr.io/agajdosi/feedem_synchronizator:latest
+```
+
+### Run Docker Container
+
+```bash
+docker run -d -p 8080:8080 ghcr.io/agajdosi/feedem_synchronizator:latest
+```
