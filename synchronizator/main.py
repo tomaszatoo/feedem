@@ -2,7 +2,7 @@ import os
 import tornado.ioloop
 import tornado.web
 import socketio
-from typing import List
+from typing import List, Any
 
 PORT = int(os.environ.get('TORNADO_PORT', 8888))
 DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
@@ -12,6 +12,9 @@ subscribers: List[str] = []
 """List of SIDs of all connected clients which are just watching."""
 controllers: List[str] = []
 """List of SIDs of all connected clients which want to send the data. Only the the first one can!"""
+game: dict[str, Any] = {}
+"""Game state."""
+
 
 class IndexHandler(tornado.web.RequestHandler):
     """Basic health check endpoint."""
@@ -46,9 +49,16 @@ app = tornado.web.Application(routes) # type: ignore
 
 @sio.event
 async def connect(sid, environ):
+    global game
     print(f"✅ client connected: {sid}")
     subscribers.append(sid)
-    await sio.emit('role_assigned', {'role': 'subscriber'}, room=sid)
+    if len(controllers) > 0:
+        controller = controllers[0]
+    else:
+        controller = ""
+    
+    await sio.emit('controller', {'controller_id': controller}, room=sid)
+    await sio.emit('game', game, room=sid)
 
 
 @sio.event
@@ -69,7 +79,7 @@ async def disconnect(sid):
         print(f"👑 main controller removed: {sid}")
         controllers.remove(sid)
         if len(controllers) > 0: # Immediately assign NEW MAIN CONTROLLER
-            await sio.emit('role_assigned', {'role': 'controller'}, room=controllers[0])
+            await sio.emit('controller', {'controller_id': controllers[0]})
 
     # Emit warning to those who are waiting for the controller role
     for i, controller in enumerate(controllers):
@@ -96,8 +106,7 @@ async def request_controller_role(sid):
         if sid in subscribers:
             subscribers.remove(sid)
         controllers.append(sid)
-        await sio.emit('role_assigned', {'role': 'controller'}, room=sid)
-        await sio.emit('controller_assigned', {'controller_id': sid})
+        await sio.emit('controller', {'controller_id': sid})
         return
 
     # ADD TO QUEUE - is not present, is not the first so we add to the end
