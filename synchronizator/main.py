@@ -117,8 +117,8 @@ async def request_controller_role(sid):
 
 
 @sio.event
-async def update_data(sid, data):
-    """Event handler for data updates - only controllers can send data"""
+async def message(sid, data):
+    """Event handler for message data updates - only controllers can send message data."""
     global controllers
 
     # NOT EXPECTED
@@ -132,6 +132,18 @@ async def update_data(sid, data):
     lookers = subscribers + controllers[1:]
     await sio.emit('data_update', data, room=lookers)
 
+@sio.event
+async def save_game(sid, data: dict[str, Any]):
+    """Event handler for game save data - only controllers can send game save data."""
+    global game, controllers
+    if sid != controllers[0]:
+        print(f"🚫 save game rejected from non-controller {sid}")
+        await sio.emit('error', {'message': 'Only first controller can save game!'}, room=sid)
+        return
+
+    game = data
+    print(f"💾 received game save from controller {sid}: {data}")
+    
 
 if __name__ == "__main__":
     app.listen(PORT)
