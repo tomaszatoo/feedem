@@ -6,6 +6,7 @@ from typing import List
 
 PORT = int(os.environ.get('TORNADO_PORT', 8888))
 DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
+PRODUCTION = os.environ.get('PRODUCTION', 'false').lower() == 'true'
 
 subscribers: List[str] = []
 """List of SIDs of all connected clients which are just watching."""
@@ -34,12 +35,13 @@ sio = socketio.AsyncServer(
     engineio_logger=DEBUG
 )
 
-# Tornado server application instance
-app = tornado.web.Application([
+routes = [
     (r'/', IndexHandler),
     (r'/socket.io/', socketio.get_tornado_handler(sio)),
-    (r'/dev', DevHandler), # TODO: Remove this before deploying
-])
+]
+if not PRODUCTION:
+    routes.append((r'/dev', DevHandler))
+app = tornado.web.Application(routes) # type: ignore
 
 
 @sio.event
