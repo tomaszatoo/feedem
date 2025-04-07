@@ -9,11 +9,6 @@ enum Relationship {
     Follow = 'follow'
 }
 
-enum Status {
-    Playing = 'playing',
-    Idle = 'idle'
-}
-
 export interface User {
     uuid: string,
     name: string,
@@ -63,7 +58,6 @@ export interface Game {
     created: number,
     updated: number,
     time: string,
-    status: Status, // idle | playing
     users: User[],
     posts: Post[],
     reactions: Reaction[],
