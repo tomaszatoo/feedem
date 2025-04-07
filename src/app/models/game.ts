@@ -54,6 +54,7 @@ export interface Relation {
 }
 
 export interface Game {
+    version: string,
     uuid: string,
     created: number,
     updated: number,
