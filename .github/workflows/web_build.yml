@@ -1,8 +1,8 @@
-name: Build and Deploy Angular App
-
+name: Build and Deploy
 on:
   push:
-    branches: [main]
+    branches: [dev]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
