@@ -1,0 +1,23 @@
+@if (user) {
+    <div class="user-card">
+        <div class="user-info">
+            <h3>{{ user.name }} {{ user.surname }}</h3>
+            <img [src]="user.profile_picture" alt="User profile picture" class="profile-picture">
+            <p class="bio">{{ user.bio }}</p>
+            <div class="user-details">
+                <p><strong>Age:</strong> {{ user.age }}</p>
+                <p><strong>Location:</strong> {{ user.city }}, {{ user.nationality }}</p>
+                <p><strong>Occupation:</strong> {{ user.occupation }}</p>
+                <p><strong>Gender:</strong> {{ user.gender }}</p>
+            </div>
+            <div class="traits">
+                <h4>Traits:</h4>
+                <!-- <ul> -->
+                    @for (trait of user.traits; track trait) {
+                        <div class="trait">{{ trait }}</div>
+                    }
+                <!-- </ul> -->
+            </div>
+        </div>
+    </div>
+}
