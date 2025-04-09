@@ -1,1 +1,6 @@
 <p>game works!</p>
+@if (controllable) {
+    <qr-code [value]="getControllerLink()"></qr-code>
+    <button (click)="requestGameControl()">Request Game Control</button>
+}
+
