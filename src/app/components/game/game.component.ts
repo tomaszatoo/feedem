@@ -23,11 +23,9 @@ import { User } from '../../models/game';
 })
 export class GameComponent implements OnInit, OnDestroy {
   
-  users: User[] = [];
-
   controllable: boolean = false;
 
-  private game!: Game;
+  game!: Game;
 
   private socketSub: Subscription = new Subscription();
   private gameControllableSub: Subscription = new Subscription();
@@ -40,7 +38,6 @@ export class GameComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.users = this.gameService.getUsers();
     // subscribe game json
     this.gameService.game.subscribe({
       next: (game: Game) => {

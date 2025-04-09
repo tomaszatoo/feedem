@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DefaultUsersService } from './default-users.service';
 import { User } from '../../models/game';
 // models
 import { Game } from '../../models/game';
@@ -11,10 +10,19 @@ import { Subject } from 'rxjs';
 })
 
 export class GameService {
+
+  game: Subject<Game> = new Subject();
+  // TODO -> USERS TO USERS.SERVICE
   private users: User[] = [];
 
-  constructor(private defaultUsers: DefaultUsersService) {
-    this.users = this.defaultUsers.getDefaultUsers();
+
+
+  constructor() {
+    this.game.subscribe({
+      next: (game: Game) => {
+        if (game.users) this.users = game.users;
+      }
+    })
   }
 
   getUsers(): User[] {
@@ -30,6 +38,6 @@ export class GameService {
   getUserById(userId: string): User | undefined {
     return this.users.find(user => user.uuid === userId);
   }
-  game: Subject<Game> = new Subject();
+  
 
 }

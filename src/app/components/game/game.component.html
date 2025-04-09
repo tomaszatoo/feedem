@@ -1,8 +1,8 @@
 <p>game works!</p>
 
-@if (users && users.length) {
+@if (game && game.users && game.users.length) {
     <div class="users-container">
-        @for (user of users; track user.uuid) {
+        @for (user of game.users; track user.uuid) {
            <app-user [user]="user"></app-user> 
         }
     </div>
