@@ -9,16 +9,19 @@ import { GameService } from '../../services/game/game.service';
 import { Subscription } from 'rxjs';
 // qr
 import { QrCodeComponent } from 'ng-qrcode';
+// user
+import { User } from '../../models/game';
 
 @Component({
   selector: 'app-game',
-  imports: [
-    QrCodeComponent
-  ],
+  standalone: true,
+  imports: [CommonModule, QrCodeComponent],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
 export class GameComponent implements OnInit, OnDestroy {
+  
+  users: User[] = [];
 
   controllable: boolean = false;
 
@@ -35,6 +38,9 @@ export class GameComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    constructor(private gameService: GameService) {
+        this.users = this.gameService.getUsers();
+    }
     // subscribe game json
     this.gameService.game.subscribe({
       next: (game: Game) => {
@@ -101,4 +107,5 @@ export class GameComponent implements OnInit, OnDestroy {
     this.socketService.sendSocketMessage(message);
   }
 
+ 
 }
