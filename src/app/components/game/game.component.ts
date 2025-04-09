@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+// components
+import { UserComponent } from '../user/user.component';
 // models
 import { Game } from '../../models/game';
 // services
@@ -15,7 +17,7 @@ import { User } from '../../models/game';
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [CommonModule, QrCodeComponent],
+  imports: [ UserComponent, QrCodeComponent],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
@@ -38,9 +40,7 @@ export class GameComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    constructor(private gameService: GameService) {
-        this.users = this.gameService.getUsers();
-    }
+    this.users = this.gameService.getUsers();
     // subscribe game json
     this.gameService.game.subscribe({
       next: (game: Game) => {
