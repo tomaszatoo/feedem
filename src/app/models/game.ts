@@ -12,7 +12,7 @@ enum Relationship {
 export interface User {
     uuid: string,
     name: string,
-    surrname: string,
+    surname: string,
     gender: string,
     age: number,
     occupation: string,
