@@ -1,5 +1,6 @@
 <p>game works!</p>
 
+
 <div class="users-container">
   <div class="user-card" *ngFor="let user of users">
     <div class="user-info">
@@ -21,3 +22,8 @@
     </div>
   </div>
 </div>
+
+@if (controllable) {
+    <qr-code [value]="getControllerLink()"></qr-code>
+    <button (click)="requestGameControl()">Request Game Control</button>
+}

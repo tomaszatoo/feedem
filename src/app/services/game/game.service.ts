@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { DefaultUsersService } from './default-users.service';
 import { User } from '../../models/game';
+// models
+import { Game } from '../../models/game';
+// rxjs
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,4 +30,6 @@ export class GameService {
   getUserById(userId: string): User | undefined {
     return this.users.find(user => user.uuid === userId);
   }
+  game: Subject<Game> = new Subject();
+
 }

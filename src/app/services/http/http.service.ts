@@ -13,7 +13,7 @@ export class HttpService {
     private readonly http: HttpClient 
   ) { }
 
-  get(url: string): Observable<Object> {
+  get<T>(url: string): Observable<any> {
     return this.http.get(url);
   }
 }

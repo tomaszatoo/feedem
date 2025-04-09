@@ -7,7 +7,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ControllerComponent } from './components/controller/controller.component';
 
 export const routes: Routes = [
-    { path: '', component: MainMenuComponent },
+    { path: '', redirectTo: '/game', pathMatch: 'full' },
     { path: 'settings', component: SettingsComponent },
     { path: 'game', component: GameComponent },
     { path: 'controller', component: ControllerComponent },
