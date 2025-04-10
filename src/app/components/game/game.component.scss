@@ -1,0 +1,13 @@
+.users {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
