@@ -61,7 +61,29 @@ export interface Game {
     time: string,
     users: User[],
     posts: Post[],
+    views: View[],
     reactions: Reaction[],
     comments: Comment[],
-    relationships: Relation[]
+    relationships: Relation[],
+}
+
+/** User has seen a Post and thought something about it.  (View was called Rating in the old version)
+ * - reasoning is what LLM thought about the post
+ * - rating JSONified reasoning
+ * - joyScore - how much LLM enjoyed the post
+ * - reactionUrge - how much LLM wants to react to the post
+ * - commentUrge - how much LLM wants to comment on the post
+ * - shareUrge - how much LLM wants to share the post
+*/
+export interface View {
+    uuid: string,
+    user: string,
+    post: string,
+    reasoning: string,
+    rating: number,
+    joyScore: number,
+    reactionUrge: number,
+    commentUrge: number,
+    shareUrge: number,
+    time: number
 }

@@ -1,7 +1,7 @@
 <div id="score">
-    <div id="engagement">⌀ engagement:<span>__._</span>% </div>
+    <div id="engagement">⌀ engagement:<span>{{ getAvgEngagement() }}</span>% </div>
     <span>>=</span>
-    <div id="limit">limit:<span>__._</span>%</div>
+    <div id="limit">limit:<span>{{ getLimit() }}</span>%</div>
     <span>→</span>
     <div id="lifes">{{ getLives() }}</div>
 </div>
