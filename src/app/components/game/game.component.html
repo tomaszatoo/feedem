@@ -1,15 +1,19 @@
-<p>game works!</p>
-
 @if (game && game.users && game.users.length) {
-    <div class="users-container">
-        @for (user of game.users; track user.uuid) {
-           <app-user [user]="user"></app-user> 
-        }
+    <div class="users">
+        <div class="users-container">
+            @for (user of game.users; track user.uuid) {
+                <app-user [user]="user"></app-user> 
+            }
+        </div>
     </div>
 }
-
 
 @if (controllable) {
     <qr-code [value]="getControllerLink()"></qr-code>
     <button (click)="requestGameControl()">Request Game Control</button>
 }
+
+
+<footer>
+    <app-score></app-score>
+</footer>

@@ -13,11 +13,12 @@ import { Subscription } from 'rxjs';
 import { QrCodeComponent } from 'ng-qrcode';
 // user
 import { User } from '../../models/game';
+import { ScoreComponent } from '../score/score.component';
 
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [ UserComponent, QrCodeComponent],
+  imports: [ UserComponent, QrCodeComponent, ScoreComponent],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
