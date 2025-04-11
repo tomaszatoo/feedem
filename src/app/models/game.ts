@@ -5,6 +5,17 @@ enum React {
     Hate = '🤬'
 }
 
+/**
+ * - DistributePost: Choose who will see the post of managed user
+ * - ShowPost: Choose which post will be shown to managed user
+ * - ShowAd: Choose which ad will be shown to managed user
+ */
+enum TaskType {
+    DistributePost = 'distributePost',
+    ShowPost = 'showPost',
+    ShowAd = 'showAd',
+}
+
 enum Relationship {
     Follow = 'follow'
 }
@@ -65,6 +76,7 @@ export interface Game {
     reactions: Reaction[],
     comments: Comment[],
     relationships: Relation[],
+    tasks: Task[],
 }
 
 /** User has seen a Post and thought something about it.  (View was called Rating in the old version)
@@ -85,5 +97,17 @@ export interface View {
     reactionUrge: number,
     commentUrge: number,
     shareUrge: number,
+    time: number
+}
+
+/** Task that user has to complete in given round.
+ * Beside tracking the current task, it also signifies how far we are in the game.
+ */
+export interface Task {
+    uuid: string,
+    user: string,
+    post: string,
+    completed: boolean,
+    type: TaskType,
     time: number
 }
