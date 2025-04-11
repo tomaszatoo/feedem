@@ -301,5 +301,7 @@
     "posts": [],
     "reactions": [],
     "comments": [],
-    "relationships": []
+    "relationships": [],
+    "views": [],
+    "tasks": []
 }
