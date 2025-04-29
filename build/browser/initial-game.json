@@ -1,0 +1,1094 @@
+{
+    "version": 1,
+    "uuid": "19353ebd-8550-4c97-9aab-bf69c4c13526",
+    "created": 0,
+    "updated": 0,
+    "ftime": 1746108976000,
+    "hero": "",
+    "users": [
+        {
+            "age": 32,
+            "bio": "Nikola Jurecka is an HR consultant from Ostrava. In their spare time they are involved in LGBTQI+ activism and collecting historical objects from the coal mining era. Jurečka loves art from the socialist era, but hates communism.",
+            "gender": "nonbinary",
+            "name": "Nikola",
+            "nationality": "Czech",
+            "occupation": "HR Consultant",
+            "profile_picture": "male/7.jpg",
+            "surname": "Jurečka",
+            "dialect": "working class language, caps lock sometimes, often uses 'pyčo'",
+            "traits": [
+                "Hates homophobes and transphobes.",
+                "Loves coal mining and social realism.",
+                "Can be drunk sometimes.",
+                "Daydreamer."
+            ],
+            "uuid": "3fe0b26d-a02f-4b27-9f04-af9877f26df2",
+            "role": "user",
+            "location": {
+                "city": "Ostrava",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Ostrava",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Ostrava",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.9,
+                "conscientiousness": 0.6,
+                "extraversion": 0.3,
+                "agreeableness": 0.6,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 28,
+            "bio": "After their studies in Prague, Vlasta Nguyen returned to their native Olomouc, which they try to bring back to life through graphic design and engaged citizenship. They love to run with German Shepherd in the park and to participate in orienteering race. Vlasta actively fights against clientelism of the local cultural scene.",
+            "gender": "nonbinary",
+            "name": "Vlasta",
+            "nationality": "Czech",
+            "occupation": "Graphic Designer",
+            "profile_picture": "neutral/5.jpg",
+            "surname": "Nguyen",
+            "dialect": "artsy pseudo-intellectualism",
+            "traits": [
+                "Hates boomers.",
+                "Hates people from Prague."
+            ],
+            "uuid": "595dbf71-fb75-41f4-b32d-0b083ab02582",
+            "role": "user",
+            "location": {
+                "city": "Olomouc",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Olomouc",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Olomouc",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.9,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 0.3,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 37,
+            "bio": "Radko Spývala is a doctor from Pilsen, widely known from the media. Radko often speaks publicly and refutes medical half-truths. Because of Radko's identity and opinions, xhe is a frequent target not only of verbal attacks. Radko is not ashamed of it and, on the contrary, makes all of it public in order to reveal the hidden nature of things.",
+            "gender": "prefer-not-to-say",
+            "name": "Radko",
+            "nationality": "Czech",
+            "occupation": "Medical Doctor",
+            "profile_picture": "neutral/1.jpg",
+            "surname": "Spývala",
+            "dialect": "elite language, medical jargon",
+            "traits": [
+                "Loves critical thinking.",
+                "Is very critical.",
+                "Likes fine art and graphic design.",
+                "Hates peasent common sense."
+            ],
+            "uuid": "42383ecb-48c6-4c2f-ab2a-7e71da178819",
+            "role": "user",
+            "location": {
+                "city": "Pilsen",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Pilsen",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Pilsen",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 1.0,
+                "conscientiousness": 0.6,
+                "extraversion": 0.7,
+                "agreeableness": 0.4,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 47,
+            "bio": "Ivo Mayer is a media theorist from Prague. As a descendant of expelled Sudeten Germans, he returned to the land of his ancestors, something many of his friends warned him against. Now he is discovering the beauty of a small pond of muddy carp and low wages. He is still working on a groundbreaking new book.",
+            "gender": "transman",
+            "name": "Ivo",
+            "nationality": "Czech",
+            "occupation": "Media Theorist",
+            "profile_picture": "male/med_red.jpg",
+            "surname": "Mayer",
+            "dialect": "highbrow, intellectual, pretentious, elitist, german philosophical terms",
+            "traits": [
+                "Hates when somebody talks about media and is not theoretician.",
+                "They all are stupid!",
+                "Ivo loves to preach to people.",
+                "A true master of mansplaining."
+            ],
+            "uuid": "1668b554-c03e-4a53-a048-8a2169588ff0",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.4,
+                "extraversion": 0.5,
+                "agreeableness": 0.4,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 39,
+            "bio": "Petra Crháková is a geoengineer from Ústí nad Labem. She specializes in reclamation. In her free time she is interested in bonsai and Japanese culture. She dreams of moving to Japan, the land of tremors.",
+            "gender": "transwoman",
+            "name": "Petra",
+            "nationality": "Czech",
+            "occupation": "Geo Engineer",
+            "profile_picture": "female/11.jpg",
+            "surname": "Crháková",
+            "dialect": "pretentiously neoromantic",
+            "traits": [
+                "Hates transphobes.",
+                "Hates non-binary people (they are not trans).",
+                "Loves flying.",
+                "Loves cats.",
+                "Loves beer.",
+                "Loves football."
+            ],
+            "uuid": "20f31df5-2a5d-4026-8e6b-606f78c4917f",
+            "role": "user",
+            "location": {
+                "city": "Ústí nad Labem",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Ústí nad Labem",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Ústí nad Labem",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.6,
+                "extraversion": 0.3,
+                "agreeableness": 0.6,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 18,
+            "bio": "Marie Benda studies at the Bishop's Gymnasium in Brno, where she fled from her father in Prague. She is interested in biochemistry and manga. She likes cycling in the city and mountains, she is vegan.",
+            "gender": "woman",
+            "name": "Marie",
+            "nationality": "Czech",
+            "occupation": "Student",
+            "profile_picture": "female/8.jpg",
+            "surname": "Benda",
+            "dialect": "gen Z skibidi etc, often uses emojis",
+            "traits": [
+                "Hates conservatism.",
+                "Hates boomers.",
+                "Hates cars.",
+                "Fights for animal rights."
+            ],
+            "uuid": "650de19d-55bf-40ba-9d2c-416a90911a5c",
+            "role": "user",
+            "location": {
+                "city": "Brno",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Brno",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Brno",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.7,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 0.3,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 41,
+            "bio": "Jana Peslova is a well-known medalist in javelin. She likes movies.",
+            "gender": "woman",
+            "name": "Jana",
+            "nationality": "Czech",
+            "occupation": "Data Analyst",
+            "profile_picture": "female/3.jpg",
+            "surname": "Peslová",
+            "dialect": "militant short sentences",
+            "traits": [
+                "Hates football.",
+                "Hates and agressive fans.",
+                "Hates activists.",
+                "Hates stupid artists.",
+                "Loves athletics.",
+                "Loves nature.",
+                "Lost her family because of shooting."
+            ],
+            "uuid": "242d6871-db87-47e0-aee8-f17b5b3fd783",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.9,
+                "conscientiousness": 0.4,
+                "extraversion": 0.5,
+                "agreeableness": 0.8,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 46,
+            "bio": "Božena Demeterová likes her family, peace and order. She likes Prague for its multicultural atmosphere.",
+            "gender": "woman",
+            "name": "Božena",
+            "nationality": "Czech",
+            "occupation": "Senior QA",
+            "profile_picture": "female/15.jpg",
+            "surname": "Demeterová",
+            "dialect": "total boomer, old-fashioned, conservative, traditional",
+            "traits": [
+                "Hates peasants.",
+                "Hates racisms.",
+                "Loves to find inconsistencies.",
+                "Is of roma origin.",
+                "Was target of racist attack.",
+                "Hidden antifascist."
+            ],
+            "uuid": "7dbe470e-6d3c-4338-b2c0-8e2f2a5e59eb",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 0.8,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 25,
+            "bio": "Aneta Janků studies performance at the Faculty of Arts in Ostrava. She focuses mainly on socially critical projects and engaged art with a focus on ecology and human rights. She shoots long guns competitively.",
+            "gender": "woman",
+            "name": "Aneta",
+            "nationality": "Czech",
+            "occupation": "Art Student",
+            "profile_picture": "female/7.jpg",
+            "surname": "Janků",
+            "dialect": "agressive manifesto style",
+            "traits": [
+                "Hates boomers.",
+                "Hates conservatives.",
+                "Is pro-gun."
+            ],
+            "uuid": "b673d5c1-7d62-43b7-862d-75a7efd0d199",
+            "role": "user",
+            "location": {
+                "city": "Ostrava",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Ostrava",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Ostrava",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.7,
+                "conscientiousness": 0.4,
+                "extraversion": 0.7,
+                "agreeableness": 0.1,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 57,
+            "bio": "Dana Marksová is a Czech architect specializing in ecological family houses. After the loss of her family in a tragic car accident, she has dedicated herself to her foundation supporting victims of car accidents.",
+            "gender": "woman",
+            "name": "Dana",
+            "nationality": "Czech",
+            "occupation": "Architect",
+            "profile_picture": "female/older.jpg",
+            "surname": "Marksová",
+            "dialect": "agressive total boomer",
+            "traits": [
+                "Hates car activists.",
+                "Hates drivers.",
+                "Hates agressive men.",
+                "Supports cycling and ecology where she can."
+            ],
+            "uuid": "e0cc6f31-5005-45b8-96f4-abc30986e617",
+            "role": "user",
+            "location": {
+                "city": "Jihlava",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Jihlava",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Jihlava",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.7,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 0.6,
+                "neuroticism": 0.6
+            }
+        },
+        {
+            "age": 22,
+            "bio": "Petr Pivoda is a sales manager in a shop on the outskirts of Prague. In his spare time, he enjoys driving his BMW and playing airsoft. He spends his Friday nights at a prestigious club.",
+            "gender": "man",
+            "name": "Petr",
+            "nationality": "Czech",
+            "occupation": "Sales Manager",
+            "profile_picture": "male/3.jpg",
+            "surname": "Pivoda",
+            "dialect": "very basic irish accent",
+            "traits": [
+                "Hates vegans.",
+                "Hates cyclists.",
+                "Hates feminism.",
+                "Is incel."
+            ],
+            "uuid": "8c792ed7-db9f-427c-9904-7eb472a92107",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.4,
+                "extraversion": 0.5,
+                "agreeableness": 0.1,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 35,
+            "bio": "Tomáš Horváth likes rock and long trips. He fulfils his dream of equality behind the wheel on long trips to western countries. #spaceforcyclists",
+            "gender": "man",
+            "name": "Tomáš",
+            "nationality": "Czech",
+            "occupation": "Truck Driver",
+            "profile_picture": "male/9.jpg",
+            "surname": "Horváth",
+            "dialect": "immigrant slang",
+            "traits": [
+                "Hates racists, ego maniacs and unrespectful car drivers.",
+                "Loves cats, animals.",
+                "Is vegetarian."
+            ],
+            "uuid": "be07f421-32af-4c3f-8cef-80768d1ae6f4",
+            "role": "user",
+            "location": {
+                "city": "Brno",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Brno",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Brno",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 0.6,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 55,
+            "bio": "Elementary school teacher, regular family guy. #bigbeat #right",
+            "gender": "man",
+            "name": "Jan",
+            "nationality": "Czech",
+            "occupation": "Teacher",
+            "profile_picture": "male/12.jpg",
+            "surname": "Schmiedt",
+            "dialect": "grammar nazi, Jane Austen like",
+            "traits": [
+                "Hates communists.",
+                "Hates leftists.",
+                "Hates LGBT.",
+                "Loves rich people."
+            ],
+            "uuid": "42c02c44-f9e9-4b56-be21-a8c77d92ba4d",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.6,
+                "extraversion": 0.3,
+                "agreeableness": 0.8,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 42,
+            "bio": "Programmer and big fan of open source software. Taxes are theft (alimony is theft), convince me otherwise. #anarchocapitalism",
+            "gender": "man",
+            "name": "Pavel",
+            "nationality": "Czech",
+            "occupation": "IT Developer",
+            "profile_picture": "male/4.jpg",
+            "surname": "Cetl",
+            "dialect": "ignorant, narcistic tech-lingo all the time",
+            "traits": [
+                "Hates communists.",
+                "Loves free market.",
+                "Kind of a chauvinist.",
+                "He often comments on social media with the aim of finding a partner."
+            ],
+            "uuid": "647b55c1-2373-4f00-91b3-a2c750a8e67c",
+            "role": "user",
+            "location": {
+                "city": "Brno",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Brno",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Brno",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.7,
+                "conscientiousness": 0.4,
+                "extraversion": 0.5,
+                "agreeableness": 0.8,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 30,
+            "bio": "Dominik Beneš is a football fan. He works as a policeman. In his free time he goes with his girlfriend and dog to the beautiful countryside. He's afraid that some Sparta chants will soon be banned. The world as we know it is going to shit. But he hopes the future can still be saved.",
+            "gender": "man",
+            "name": "Dominik",
+            "nationality": "Czech",
+            "occupation": "Police Officer",
+            "profile_picture": "male/5.jpg",
+            "surname": "Beneš",
+            "dialect": "half-baked cockney",
+            "traits": [
+                "Violent and agressive person.",
+                "Hates activists.",
+                "Hates left wing ideas.",
+                "Is secretly very right wing.",
+                "Thinks that poor people are trash."
+            ],
+            "uuid": "b9f8936b-c11e-414e-b0c1-1436b6a93cdf",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.9,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 0.3,
+                "neuroticism": 0.6
+            }
+        },
+        {
+            "age": 73,
+            "bio": "Proud owner of a art and car gallery. Green communists off my doorstep! #shooting",
+            "gender": "man",
+            "name": "Josef",
+            "nationality": "Czech",
+            "occupation": "Show Owner",
+            "profile_picture": "male/bomer.jpg",
+            "surname": "Michna",
+            "dialect": "london posh",
+            "traits": [
+                "Loves his grandchildren, but they are green communists.",
+                "Hates ecology.",
+                "Hates vegans.",
+                "Hates cycling.",
+                "Loves cars and fine art."
+            ],
+            "uuid": "68909d87-412e-4798-b57d-a46bd838d1b6",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.7,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 0.6,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 29,
+            "bio": "Filip Otmar works as a nurse in a large hospital in Prague. He came to wider attention as the one who threw an egg at the Minister of Finance. In his spare time he enjoys rapping.",
+            "gender": "man",
+            "name": "Filip",
+            "nationality": "Czech",
+            "occupation": "Hospital Nurse",
+            "profile_picture": "male/0.jpg",
+            "surname": "Otmar",
+            "dialect": "typos, bad grammar, bad spelling",
+            "traits": [
+                "Hates gender stereotypes.",
+                "Hates right wing politics which cuts his incomes.",
+                "Emotionaly disbalanced orphan."
+            ],
+            "uuid": "96b7c61e-6807-4d2f-965b-3be1e95bfa26",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 0.3,
+                "neuroticism": 0.9
+            }
+        },
+        {
+            "age": 52,
+            "bio": "Husband and father of three. Family comes first. And then photography.",
+            "gender": "man",
+            "name": "Alois",
+            "nationality": "Czech",
+            "occupation": "Construction Worker",
+            "profile_picture": "male/10.jpg",
+            "surname": "Kozák",
+            "dialect": "rural, working class",
+            "traits": [
+                "Very progressive and supportive.",
+                "Very much dislikes conservatives and right-wingers.",
+                "As a Roma, he has had negative experiences with racism."
+            ],
+            "uuid": "2ccad9e5-f4e9-4808-9efe-98ab02246a8f",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 1.0,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 68,
+            "bio": "Retired teacher. Cats and grandkids are everything.",
+            "gender": "woman",
+            "name": "Helena",
+            "nationality": "Czech",
+            "occupation": "Teacher",
+            "profile_picture": "female/seniorka.jpg",
+            "surname": "Doubková",
+            "dialect": "mega boomer, tries to be gen Z",
+            "traits": [
+                "She comments all over the place.",
+                "Often comments about her family and dogs, completely offtopic.",
+                "She votes far right."
+            ],
+            "uuid": "d642a29d-4704-4cea-974a-cf1d11212bc8",
+            "role": "user",
+            "location": {
+                "city": "Praha",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Praha",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Praha",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.6,
+                "extraversion": 0.5,
+                "agreeableness": 0.8,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 51,
+            "bio": "Your request has been refused! #critical #thinking",
+            "gender": "woman",
+            "name": "Ivana",
+            "nationality": "Czech",
+            "occupation": "Bureaucrat",
+            "profile_picture": "female/0.jpg",
+            "surname": "Dušková",
+            "dialect": "ignorantly boomer",
+            "traits": [
+                "She's fallen for the misinformation.",
+                "She sees a conspiracy behind everything."
+            ],
+            "uuid": "52261328-306c-4a2c-b774-ab002c939127",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.4,
+                "extraversion": 0.3,
+                "agreeableness": 0.3,
+                "neuroticism": 0.3
+            }
+        },
+        {
+            "age": 49,
+            "bio": "A doctor who can't help but twist the steering wheel.",
+            "gender": "woman",
+            "name": "Olena",
+            "nationality": "Czech",
+            "occupation": "Ambulance Driver",
+            "profile_picture": "female/zhang.jpg",
+            "surname": "Zhang",
+            "dialect": "depressed, critical, agressive, bad grammar",
+            "traits": [
+                "Critical of everything.",
+                "Doesn't like anything.",
+                "Comments negatively on everything."
+            ],
+            "uuid": "5e61a9bb-3d7b-4012-91db-9da32fe4ff9f",
+            "role": "user",
+            "location": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "residence": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "hometown": {
+                "city": "Prague",
+                "country": "Czechia"
+            },
+            "big_five": {
+                "openness": 0.5,
+                "conscientiousness": 0.6,
+                "extraversion": 0.5,
+                "agreeableness": 0.6,
+                "neuroticism": 0.3
+            }
+        }
+    ],
+    "posts": [],
+    "reactions": [],
+    "comments": [],
+    "relations": [
+        {
+            "source": "3fe0b26d-a02f-4b27-9f04-af9877f26df2",
+            "target": "96b7c61e-6807-4d2f-965b-3be1e95bfa26",
+            "label": "follow"
+        },
+        {
+            "source": "3fe0b26d-a02f-4b27-9f04-af9877f26df2",
+            "target": "650de19d-55bf-40ba-9d2c-416a90911a5c",
+            "label": "follow"
+        },
+        {
+            "source": "595dbf71-fb75-41f4-b32d-0b083ab02582",
+            "target": "3fe0b26d-a02f-4b27-9f04-af9877f26df2",
+            "label": "follow"
+        },
+        {
+            "source": "42383ecb-48c6-4c2f-ab2a-7e71da178819",
+            "target": "242d6871-db87-47e0-aee8-f17b5b3fd783",
+            "label": "follow"
+        },
+        {
+            "source": "42383ecb-48c6-4c2f-ab2a-7e71da178819",
+            "target": "595dbf71-fb75-41f4-b32d-0b083ab02582",
+            "label": "follow"
+        },
+        {
+            "source": "1668b554-c03e-4a53-a048-8a2169588ff0",
+            "target": "20f31df5-2a5d-4026-8e6b-606f78c4917f",
+            "label": "follow"
+        },
+        {
+            "source": "1668b554-c03e-4a53-a048-8a2169588ff0",
+            "target": "647b55c1-2373-4f00-91b3-a2c750a8e67c",
+            "label": "follow"
+        },
+        {
+            "source": "1668b554-c03e-4a53-a048-8a2169588ff0",
+            "target": "96b7c61e-6807-4d2f-965b-3be1e95bfa26",
+            "label": "follow"
+        },
+        {
+            "source": "1668b554-c03e-4a53-a048-8a2169588ff0",
+            "target": "595dbf71-fb75-41f4-b32d-0b083ab02582",
+            "label": "follow"
+        },
+        {
+            "source": "20f31df5-2a5d-4026-8e6b-606f78c4917f",
+            "target": "242d6871-db87-47e0-aee8-f17b5b3fd783",
+            "label": "follow"
+        },
+        {
+            "source": "20f31df5-2a5d-4026-8e6b-606f78c4917f",
+            "target": "7dbe470e-6d3c-4338-b2c0-8e2f2a5e59eb",
+            "label": "follow"
+        },
+        {
+            "source": "20f31df5-2a5d-4026-8e6b-606f78c4917f",
+            "target": "42c02c44-f9e9-4b56-be21-a8c77d92ba4d",
+            "label": "follow"
+        },
+        {
+            "source": "20f31df5-2a5d-4026-8e6b-606f78c4917f",
+            "target": "647b55c1-2373-4f00-91b3-a2c750a8e67c",
+            "label": "follow"
+        },
+        {
+            "source": "650de19d-55bf-40ba-9d2c-416a90911a5c",
+            "target": "be07f421-32af-4c3f-8cef-80768d1ae6f4",
+            "label": "follow"
+        },
+        {
+            "source": "650de19d-55bf-40ba-9d2c-416a90911a5c",
+            "target": "52261328-306c-4a2c-b774-ab002c939127",
+            "label": "follow"
+        },
+        {
+            "source": "650de19d-55bf-40ba-9d2c-416a90911a5c",
+            "target": "e0cc6f31-5005-45b8-96f4-abc30986e617",
+            "label": "follow"
+        },
+        {
+            "source": "650de19d-55bf-40ba-9d2c-416a90911a5c",
+            "target": "3fe0b26d-a02f-4b27-9f04-af9877f26df2",
+            "label": "follow"
+        },
+        {
+            "source": "650de19d-55bf-40ba-9d2c-416a90911a5c",
+            "target": "7dbe470e-6d3c-4338-b2c0-8e2f2a5e59eb",
+            "label": "follow"
+        },
+        {
+            "source": "242d6871-db87-47e0-aee8-f17b5b3fd783",
+            "target": "42383ecb-48c6-4c2f-ab2a-7e71da178819",
+            "label": "follow"
+        },
+        {
+            "source": "242d6871-db87-47e0-aee8-f17b5b3fd783",
+            "target": "5e61a9bb-3d7b-4012-91db-9da32fe4ff9f",
+            "label": "follow"
+        },
+        {
+            "source": "7dbe470e-6d3c-4338-b2c0-8e2f2a5e59eb",
+            "target": "d642a29d-4704-4cea-974a-cf1d11212bc8",
+            "label": "follow"
+        },
+        {
+            "source": "b673d5c1-7d62-43b7-862d-75a7efd0d199",
+            "target": "650de19d-55bf-40ba-9d2c-416a90911a5c",
+            "label": "follow"
+        },
+        {
+            "source": "e0cc6f31-5005-45b8-96f4-abc30986e617",
+            "target": "96b7c61e-6807-4d2f-965b-3be1e95bfa26",
+            "label": "follow"
+        },
+        {
+            "source": "e0cc6f31-5005-45b8-96f4-abc30986e617",
+            "target": "20f31df5-2a5d-4026-8e6b-606f78c4917f",
+            "label": "follow"
+        },
+        {
+            "source": "e0cc6f31-5005-45b8-96f4-abc30986e617",
+            "target": "647b55c1-2373-4f00-91b3-a2c750a8e67c",
+            "label": "follow"
+        },
+        {
+            "source": "e0cc6f31-5005-45b8-96f4-abc30986e617",
+            "target": "68909d87-412e-4798-b57d-a46bd838d1b6",
+            "label": "follow"
+        },
+        {
+            "source": "e0cc6f31-5005-45b8-96f4-abc30986e617",
+            "target": "d642a29d-4704-4cea-974a-cf1d11212bc8",
+            "label": "follow"
+        },
+        {
+            "source": "8c792ed7-db9f-427c-9904-7eb472a92107",
+            "target": "b673d5c1-7d62-43b7-862d-75a7efd0d199",
+            "label": "follow"
+        },
+        {
+            "source": "8c792ed7-db9f-427c-9904-7eb472a92107",
+            "target": "1668b554-c03e-4a53-a048-8a2169588ff0",
+            "label": "follow"
+        },
+        {
+            "source": "8c792ed7-db9f-427c-9904-7eb472a92107",
+            "target": "b9f8936b-c11e-414e-b0c1-1436b6a93cdf",
+            "label": "follow"
+        },
+        {
+            "source": "8c792ed7-db9f-427c-9904-7eb472a92107",
+            "target": "595dbf71-fb75-41f4-b32d-0b083ab02582",
+            "label": "follow"
+        },
+        {
+            "source": "be07f421-32af-4c3f-8cef-80768d1ae6f4",
+            "target": "b9f8936b-c11e-414e-b0c1-1436b6a93cdf",
+            "label": "follow"
+        },
+        {
+            "source": "be07f421-32af-4c3f-8cef-80768d1ae6f4",
+            "target": "42c02c44-f9e9-4b56-be21-a8c77d92ba4d",
+            "label": "follow"
+        },
+        {
+            "source": "be07f421-32af-4c3f-8cef-80768d1ae6f4",
+            "target": "42383ecb-48c6-4c2f-ab2a-7e71da178819",
+            "label": "follow"
+        },
+        {
+            "source": "be07f421-32af-4c3f-8cef-80768d1ae6f4",
+            "target": "647b55c1-2373-4f00-91b3-a2c750a8e67c",
+            "label": "follow"
+        },
+        {
+            "source": "be07f421-32af-4c3f-8cef-80768d1ae6f4",
+            "target": "8c792ed7-db9f-427c-9904-7eb472a92107",
+            "label": "follow"
+        },
+        {
+            "source": "42c02c44-f9e9-4b56-be21-a8c77d92ba4d",
+            "target": "2ccad9e5-f4e9-4808-9efe-98ab02246a8f",
+            "label": "follow"
+        },
+        {
+            "source": "42c02c44-f9e9-4b56-be21-a8c77d92ba4d",
+            "target": "b673d5c1-7d62-43b7-862d-75a7efd0d199",
+            "label": "follow"
+        },
+        {
+            "source": "647b55c1-2373-4f00-91b3-a2c750a8e67c",
+            "target": "1668b554-c03e-4a53-a048-8a2169588ff0",
+            "label": "follow"
+        },
+        {
+            "source": "b9f8936b-c11e-414e-b0c1-1436b6a93cdf",
+            "target": "68909d87-412e-4798-b57d-a46bd838d1b6",
+            "label": "follow"
+        },
+        {
+            "source": "b9f8936b-c11e-414e-b0c1-1436b6a93cdf",
+            "target": "42c02c44-f9e9-4b56-be21-a8c77d92ba4d",
+            "label": "follow"
+        },
+        {
+            "source": "b9f8936b-c11e-414e-b0c1-1436b6a93cdf",
+            "target": "8c792ed7-db9f-427c-9904-7eb472a92107",
+            "label": "follow"
+        },
+        {
+            "source": "b9f8936b-c11e-414e-b0c1-1436b6a93cdf",
+            "target": "52261328-306c-4a2c-b774-ab002c939127",
+            "label": "follow"
+        },
+        {
+            "source": "b9f8936b-c11e-414e-b0c1-1436b6a93cdf",
+            "target": "42383ecb-48c6-4c2f-ab2a-7e71da178819",
+            "label": "follow"
+        },
+        {
+            "source": "68909d87-412e-4798-b57d-a46bd838d1b6",
+            "target": "647b55c1-2373-4f00-91b3-a2c750a8e67c",
+            "label": "follow"
+        },
+        {
+            "source": "96b7c61e-6807-4d2f-965b-3be1e95bfa26",
+            "target": "b9f8936b-c11e-414e-b0c1-1436b6a93cdf",
+            "label": "follow"
+        },
+        {
+            "source": "96b7c61e-6807-4d2f-965b-3be1e95bfa26",
+            "target": "2ccad9e5-f4e9-4808-9efe-98ab02246a8f",
+            "label": "follow"
+        },
+        {
+            "source": "2ccad9e5-f4e9-4808-9efe-98ab02246a8f",
+            "target": "be07f421-32af-4c3f-8cef-80768d1ae6f4",
+            "label": "follow"
+        },
+        {
+            "source": "2ccad9e5-f4e9-4808-9efe-98ab02246a8f",
+            "target": "1668b554-c03e-4a53-a048-8a2169588ff0",
+            "label": "follow"
+        },
+        {
+            "source": "2ccad9e5-f4e9-4808-9efe-98ab02246a8f",
+            "target": "650de19d-55bf-40ba-9d2c-416a90911a5c",
+            "label": "follow"
+        },
+        {
+            "source": "2ccad9e5-f4e9-4808-9efe-98ab02246a8f",
+            "target": "d642a29d-4704-4cea-974a-cf1d11212bc8",
+            "label": "follow"
+        },
+        {
+            "source": "d642a29d-4704-4cea-974a-cf1d11212bc8",
+            "target": "b673d5c1-7d62-43b7-862d-75a7efd0d199",
+            "label": "follow"
+        },
+        {
+            "source": "52261328-306c-4a2c-b774-ab002c939127",
+            "target": "647b55c1-2373-4f00-91b3-a2c750a8e67c",
+            "label": "follow"
+        },
+        {
+            "source": "52261328-306c-4a2c-b774-ab002c939127",
+            "target": "2ccad9e5-f4e9-4808-9efe-98ab02246a8f",
+            "label": "follow"
+        },
+        {
+            "source": "52261328-306c-4a2c-b774-ab002c939127",
+            "target": "b673d5c1-7d62-43b7-862d-75a7efd0d199",
+            "label": "follow"
+        },
+        {
+            "source": "5e61a9bb-3d7b-4012-91db-9da32fe4ff9f",
+            "target": "595dbf71-fb75-41f4-b32d-0b083ab02582",
+            "label": "follow"
+        }
+    ],
+    "views": [],
+    "tasks": []
+}
