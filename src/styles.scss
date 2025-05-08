@@ -124,10 +124,11 @@ app-game {
     .hero {
         position: absolute;
         max-width: 25%;
-        // height: 100%;
+        max-height: 100%;
         left: 0;
         top: 0;
         @extend .grayscale;
+        overflow: hidden;
     }
 
     app-graph {
@@ -313,6 +314,32 @@ app-user {
         }
     }
 
+    .user-psycho-profiles {
+        .psycho-container {
+            padding-bottom: calc($space / 3);
+            margin-bottom: calc($space / 3);
+            border-bottom: 1px solid $lightColor;
+            .psycho-value {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                .indicator-label {
+                    &:first-child {
+                        margin-right: $space;
+                    }
+                    &:last-child {
+                        margin-left: $space;
+                    }
+                }
+                // .indicator-label {
+                //     // margin-right: $space;
+                //     // flex: calc($space * 7);
+                // }
+            }
+            
+        }
+    }
     .user-details {
         display: flex;
         flex-direction: row;
@@ -345,17 +372,21 @@ app-user {
         }
     }
 
-    .connections {
-        padding: calc($space / 4);
+    .connected-users {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-
-        &>div {
-            margin-right: calc($space / 2);
+        .connections {
+            padding: calc($space / 4);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+    
+            &>div {
+                margin-right: calc($space / 2);
+            }
         }
     }
+    
 
     .analytics {
         @extend .bot-font;
@@ -377,6 +408,7 @@ app-user {
 
         .psychoanalysis {
             margin-top: calc($space / 3);
+            width: 100%;
         }
     }
 }
