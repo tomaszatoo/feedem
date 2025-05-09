@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npx ng build --configuration=production
+        run: npx ng build --configuration=production --base-href /ssg/andreas-gajdosik/feed-em/
 
       - name: Upload build as artifact
         uses: actions/upload-artifact@v4
