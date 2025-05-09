@@ -69,11 +69,18 @@ export class RadarComponent implements AfterViewInit, OnDestroy {
     // console.log('set radarData', radarData);
     if (radarData.length) {
       this._data = radarData;
+      // console.log('is radar initialised?', this.radarInitialized);
       // this.log('DATA', this._data);
-      if (this.svgElm) {
+      if (this.svgElm/*  && !this.radarInitialized */) {
         // this.log('svgElm on data set', this.svgElm);
         this.initRadar();
       }
+
+      // if (this.svgElm && this.radarInitialized) {
+      //   this.chart();
+      // }
+
+      
 
     }
   }
@@ -111,9 +118,10 @@ export class RadarComponent implements AfterViewInit, OnDestroy {
 
   private _data: RadarData[] = [];
   private radarInitialized: boolean = false;
-  private get id(): string {
-    return uuidv4();
-  }
+  // private get id(): string {
+  //   return uuidv4();
+  // }
+  private id: string = uuidv4();
 
   private maxValue: number = 0;
   private allAxis!: string[];
@@ -180,6 +188,7 @@ export class RadarComponent implements AfterViewInit, OnDestroy {
 
   private chart(): void {
     // this.log('config.w', this.config.w);
+    
     // const scope = this;
     const svg = d3.select(this.svgElm.nativeElement)
       .attr('width', this.config.w)

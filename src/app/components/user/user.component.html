@@ -10,9 +10,9 @@
             }
         </div>
         <div class="big-five">
-            @if(radarData.length) {
+            @if(big5Data.length) {
                 <app-radar
-                    [data]="radarData"
+                    [data]="big5Data"
                     [size]="180"
                     [colorScheme]="{
                         color: '#ddd',
@@ -23,6 +23,8 @@
             }
         </div>
     </div>
+
+    
 
     <div class="user-details">
         <p><strong>Age</strong> {{ user.age }}</p>
@@ -39,75 +41,107 @@
                 <div class="trait">{{ trait.replace('.', '') }}</div>
             }
     </div>
-    @if(following.length) {
-        <div class="connections">
-            <div>Follows&nbsp;</div>
-            @for(connection of following; let i = $index; track i) {
-                <div class="connection user-profile-picture-smaller">
-                    <img [src]="getUser(connection).profile_picture" alt="">
-                </div>
-            }
-        </div>
-    }
-    @if(followers.length) {
-        <div class="connections">
-            <div>Followed by&nbsp;</div>
-            @for(connection of followers; let i = $index; track i) {
-                <div class="connection user-profile-picture-smaller">
-                    <img [src]="getUser(connection).profile_picture" alt="">
-                </div>
-            }
-        </div>
-    }
+    <div class="connected-users">
+        @if(following.length) {
+            <div class="connections">
+                <div><mat-icon>favorite</mat-icon></div>
+                @for(connection of following; let i = $index; track i) {
+                    <div class="connection user-profile-picture-smaller">
+                        <img [src]="getUser(connection).profile_picture" alt="">
+                    </div>
+                }
+            </div>
+        }
+        @if(followers.length) {
+            <div class="connections">
+                <div><mat-icon>star</mat-icon>&nbsp;</div>
+                @for(connection of followers; let i = $index; track i) {
+                    <div class="connection user-profile-picture-smaller">
+                        <img [src]="getUser(connection).profile_picture" alt="">
+                    </div>
+                }
+            </div>
+        }
+    </div>
 
-    <div class="analytics">
-        {{user.name}}'s avg. reacts:
-        <div class="statistics">
-            <span>
-                💬 {{ getCommentChanceOfUser(user)*100 | number:'1.1-1' }}%
-            </span>
-            @for(entry of getReactionChancesOfUser(user) | keyvalue; track entry.key) {
+    @if(isHero) {
+        <div class="analytics">
+            {{user.name}}'s avg. reacts:
+            <div class="statistics">
                 <span>
-                    {{ entry.key }} {{ entry.value * 100 | number:'1.1-1' }}%
+                    💬 {{ getCommentChanceOfUser(user)*100 | number:'1.1-1' }}%
                 </span>
-            }
-        </div>
-        <div class="psychoanalysis">
-            deep analyzed feelings:
-            <div class="emotion-scores">
-                @for(entry of getUserEmotionScores(user) | keyvalue; track entry.key) {
+                @for(entry of getReactionChancesOfUser(user) | keyvalue; track entry.key) {
                     <span>
-                        @if(entry.key === 'happy') { 😁 } 
-                        @else if(entry.key === 'sad') { 😢 } 
-                        @else if(entry.key === 'stupid') { 🤦‍♂️ } 
-                        @else if(entry.key === 'boring') { 😴 }
-                        {{ entry.value | number:'1.3-3' }}
+                        {{ entry.key }} {{ entry.value * 100 | number:'1.1-1' }}%
                     </span>
                 }
             </div>
-            <div>
-                bigfive:
-                <div>
-                    <span>O={{ user.big_five.openness | number:'1.3-3' }} </span>
-                    <span>C={{ user.big_five.conscientiousness | number:'1.3-3' }} </span>
-                    <span>E={{ user.big_five.extraversion | number:'1.3-3' }} </span>
-                    <span>A={{ user.big_five.agreeableness | number:'1.3-3' }} </span>
-                    <span>N={{ user.big_five.neuroticism | number:'1.3-3' }} </span>
+            <div class="psychoanalysis">
+                deep analyzed feelings:
+                <div class="emotion-scores">
+                    @for(entry of getUserEmotionScores(user) | keyvalue; track entry.key) {
+                        <span>
+                            @if(entry.key === 'happy') { 😁 } 
+                            @else if(entry.key === 'sad') { 😢 } 
+                            @else if(entry.key === 'stupid') { 🤦‍♂️ } 
+                            @else if(entry.key === 'boring') { 😴 }
+                            {{ entry.value | number:'1.3-3' }}
+                        </span>
+                    }
                 </div>
-                plutchik:
                 <div>
-                    <span>joy_sadness={{ user.plutchik.joy_sadness | number:'1.3-3' }} </span>
-                    <span>anger_fear={{ user.plutchik.anger_fear | number:'1.3-3' }} </span>
-                    <span>trust_disgust={{ user.plutchik.trust_disgust | number:'1.3-3' }} </span>
-                    <span>surprise_anticipation={{ user.plutchik.surprise_anticipation | number:'1.3-3' }} </span>
-                </div>
-                russell:
-                <div>
-                    <span>valence={{ user.russell.valence | number:'1.3-3' }} </span>
-                    <span>arousal={{ user.russell.arousal | number:'1.3-3' }} </span>
+                    bigfive:
+                    <div>
+                        <span>O={{ user.big_five.openness | number:'1.3-3' }} </span>
+                        <span>C={{ user.big_five.conscientiousness | number:'1.3-3' }} </span>
+                        <span>E={{ user.big_five.extraversion | number:'1.3-3' }} </span>
+                        <span>A={{ user.big_five.agreeableness | number:'1.3-3' }} </span>
+                        <span>N={{ user.big_five.neuroticism | number:'1.3-3' }} </span>
+                    </div>
+                    
+                    
+                    <div class="user-psycho-profiles">
+                        russell:
+                        @if(user.russell) {
+                            <div class="russel psycho-container">
+                                @for(key of keys(user.russell); track key) {
+                                    <div class="psycho-value">
+                                        <div class="indicator-label bot-font"><small>{{key}}</small></div>
+                                        <app-value-indicator [range]="[-1, 1]" [value]="value(user.russell, key)"></app-value-indicator>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        plutchik:
+                        @if(user.plutchik) {
+                            <div class="plutchik psycho-container">
+                                @for(key of keys(user.plutchik); track key) {
+                                    <div class="psycho-value">
+                                        <div class="indicator-label bot-font"><small>{{plutchikLabelsFromKey(key)[0]}}</small></div>
+                                        <app-value-indicator [range]="[-1, 1]" [value]="value(user.plutchik, key)"></app-value-indicator>
+                                        <div class="indicator-label bot-font"><small>{{plutchikLabelsFromKey(key)[1]}}</small></div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
+                    <!-- plutchik:
+                    <div>
+                        <span>joy_sadness={{ user.plutchik.joy_sadness | number:'1.3-3' }} </span>
+                        <span>anger_fear={{ user.plutchik.anger_fear | number:'1.3-3' }} </span>
+                        <span>trust_disgust={{ user.plutchik.trust_disgust | number:'1.3-3' }} </span>
+                        <span>surprise_anticipation={{ user.plutchik.surprise_anticipation | number:'1.3-3' }} </span>
+                    </div>
+                    russell:
+                    <div>
+                        <span>valence={{ user.russell.valence | number:'1.3-3' }} </span>
+                        <span>arousal={{ user.russell.arousal | number:'1.3-3' }} </span>
+                    </div> -->
                 </div>
             </div>
         </div>
-    </div>
+    }
+    
     
 }

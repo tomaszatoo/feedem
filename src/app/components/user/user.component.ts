@@ -1,29 +1,35 @@
-import { Component, Input, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Input, OnInit, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // models
-import { BigFive, User, React } from '../../models/game';
+import { BigFive, User, React, PlutchikEmotions, Task } from '../../models/game';
 // components
 import { RadarComponent, RadarData } from '../radar/radar.component';
+import { ValueIndicatorComponent } from '../value-indicator/value-indicator.component';
+import { MaterialModule } from '../../modules/material/material.module';
 // uuid
 import { v4 as uuidv4 } from 'uuid';
 import Typed from 'typed.js';
 import { GameService } from '../../services/game/game.service';
 import { getCommentChanceOfUser, getReactionChancesOfUser, getUserEmotionScores } from '../../shared/utils';
+import { Subscription } from 'rxjs';
 
 
 @Component({
   selector: 'app-user',
-  imports: [ CommonModule, RadarComponent ],
+  imports: [ CommonModule, RadarComponent, ValueIndicatorComponent, MaterialModule ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
-export class UserComponent implements OnInit, AfterViewInit {
+export class UserComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() user!: User | undefined;
   @Input() following: string[] = [];
   @Input() followers: string[] = [];
   @ViewChild('bioElement') bioElement!: ElementRef;
 
-  radarData: RadarData[] = [];
+  private taskSub: Subscription = new Subscription();
+
+  big5Data: RadarData[] = [];
+
   isHero: boolean = false;
 
   constructor(
@@ -31,23 +37,23 @@ export class UserComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.user && this.user.big_five) {
-      const data: RadarData = {
-        id: uuidv4(),
-        items: [],
-        name: '',
-        color: '#ddd'
-      };
-      for (const key in this.user.big_five) {
-        data.items.push({
-          name: key,
-          value: this.user.big_five[key as keyof BigFive],
-          color: '#ddd'
-        });
-      }
-      this.radarData.push(data);
+    if (this.user) {
+      if (this.user.big_five) this.big5Data.push(this.getRadarData(this.user.big_five));
+      // if (this.user.plutchik) this.plutchikData.push(this.getRadarData(this.user.plutchik));
     }
     this.isHero = this.user?.uuid === this.gameService.game.hero;
+    // recalcualte big five on task
+    this.taskSub = this.gameService.gameMessage.subscribe({
+      next: (message: any) => {
+        // console.log('game message', message);
+        // VERY, VERY BAD SOLUTION :/
+        if (message.data && message.data.command && message.data.command === 'task' && this.user && this.user.big_five) {
+          console.log('----> RECALCULATE BIG5');
+          this.big5Data.length = 0;
+          this.big5Data.push(this.getRadarData(this.user.big_five));
+        }
+      }
+    })
   }
 
   ngAfterViewInit() {
@@ -63,6 +69,27 @@ export class UserComponent implements OnInit, AfterViewInit {
         // fadeOutClass: 'typed-fade-out',
       });
     }
+  }
+
+  ngOnDestroy(): void {
+    this.taskSub.unsubscribe();
+  }
+
+  private getRadarData(model: any): RadarData {
+    const data: RadarData = {
+      id: uuidv4(),
+      items: [],
+      name: '',
+      color: '#ddd'
+    };
+    for (const key in model) {
+      data.items.push({
+        name: key,
+        value: model[key as keyof BigFive || key as keyof PlutchikEmotions],
+        color: '#ddd'
+      });
+    }
+    return data;
   }
 
   getUser(userId: string): User {
@@ -81,5 +108,17 @@ export class UserComponent implements OnInit, AfterViewInit {
     // TODO: JUST DO NOT KNOW WHY IT IS 😁 0.5 😢 0.3 😴 0.2 🤦‍♂️ 0.2 ALL THE FUCKING TIME
     // WHILE THE REACTIONS WORKS JUST FINE
     return getUserEmotionScores(user, this.gameService.game.views);
+  }
+
+  keys(object: any): string[] {
+    return Object.keys(object);
+  }
+
+  value(object: any, key: string): any {
+    return object[key];
+  }
+
+  plutchikLabelsFromKey(key: string): string[] {
+    return key.split('_');
   }
 }
